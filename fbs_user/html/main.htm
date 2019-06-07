@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>FBS - Login</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<meta http-equiv="Cache-Control" content="no-cache;no-store;must-revalidate;max-age=0">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<link rel="stylesheet" href="css/sexy-captcha/styles.css">
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.sexy-captcha-0.1.js"></script>
+<SCRIPT language=JavaScript>
+<!--
+var noOfClick = 0;
+function CheckJSEnable() { //v2.0
+
+  if (document.form1.loginID.value == ""){
+	  alert ('Please enter your Login Name!');
+	  document.form1.loginID.focus();
+	  return false;
+  }
+  else if (document.form1.passwd.value == ""){
+	  alert ('Please enter your Password!');
+	  document.form1.passwd.focus();
+	  return false;
+  }
+  else if (document.form1.verify_text.value == ""){
+	  alert ('Please type the letters in the picture for validation!');
+	  document.form1.verify_text.focus();
+	  return false;
+  }
+  document.form1.JSEnable.value="true";
+  noOfClick++;
+
+  if (noOfClick > 1){
+  	return false;
+  }
+  return true;
+}
+
+$(document).ready(function (){
+	for (var i = 0, fld; fld = document.forms[0].elements[i++];) {
+	   switch(fld.type){
+		  case  "text":
+			 fld.value = ""; fld.autocomplete = "off"; break;
+		  case "checkbox":
+			 fld.checked = false; break;
+		  case "radio":
+			 fld.checked = false; break;
+		  case  "textarea":
+			 fld.value = ""; break;
+		  case  "select-one":
+			 fld.selectedIndex = 0; break;
+		  case  "password":
+			 fld.value = ""; fld.autocomplete = "off"; break;
+		  case  "file" :
+			 fld.value = ""; break;
+	   }
+	}
+});
+//-->
+</SCRIPT>
+
+<STYLE type=text/css>
+UL {
+	FONT-SIZE: 10pt; COLOR: #3333ff; LINE-HEIGHT: 100%; FONT-STYLE: italic; FONT-FAMILY: Arial
+}
+OL {
+	FONT-SIZE: 10pt; COLOR: #3333ff; LINE-HEIGHT: 100%; FONT-STYLE: italic; line-height:16px; FONT-FAMILY: Arial
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2900.6169" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginwidth="0" marginheight="0">
+<TABLE cellSpacing=0 cellPadding=0 width=760 border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG height=132 src="../images/index_01.jpg" width=760></TD></TR>
+  <TR>
+    <TD vAlign=top>
+      <FORM name=form1 onSubmit="return CheckJSEnable();" action="../bin2/main" method="post">
+            <TABLE cellSpacing=0 cellPadding=2 width=740 border=0>
+              <TBODY>
+                <TR>
+                  <TD vAlign=top width=11 height=109>&nbsp;</TD>
+                  <TD width="717" vAlign=top><P><FONT face="Times New Roman, Times, serif"><B><FONT 
+            color=#ff3333><I>Notes for users: </I></FONT></B></FONT></P>
+                      <div>
+                        <OL>
+                          <LI><FONT face="Times New Roman, Times, serif"><B><I><FONT 
+                color=#3333ff size=2>This online booking service is open to all 
+                            Full-time and Part-time students, staff and their family members, 
+                            "Sports Facilities User Card" holders (including Alumni), and long-service retirees / leavers of 
+                            Hong Kong University of Science &amp; Technology. </FONT></I></B></FONT>
+                          <LI><FONT color=#3333ff size=2><I><B><FONT 
+                face="Times New Roman, Times, serif" color=#ff00ff>Students and 
+                            staff members </FONT><FONT 
+                face="Times New Roman, Times, serif">should use their <FONT 
+                color=#ff00ff>university network account</FONT> as login name 
+                              for access to the system. </FONT></B></I></FONT>
+                          <LI><FONT color=#3333ff size=2><I><B><FONT 
+                face="Times New Roman, Times, serif" color=#ff00ff>Eligible 
+                            family members of staff</FONT><FONT 
+                face="Times New Roman, Times, serif"> are those defined by the 
+                              Human Resources Office of the University. Their access to this system 
+                              requires a <FONT color=#ff00ff>first-time activation</FONT> by 
+                              their respective staff members through the system. </FONT></B></I></FONT>
+                          <LI><FONT color=#3333ff size=2><I><B><FONT 
+                face="Times New Roman, Times, serif" color=#ff00ff>"Sports 
+                            Facilities User Card" </FONT><FONT 
+                face="Times New Roman, Times, serif">holders (including HKUST alumni), and long-service retirees / leavers of the University 
+                              should submit a <FONT color=#ff00ff>first-time 
+                                registration</FONT> via the system <U><FONT 
+                color=#ff00ff>before</FONT></U> access to this online booking 
+                              system will be enabled. </FONT></B></I></FONT></LI>
+                        </OL>
+                      </div></TD>
+                </TR>
+              <TBODY>
+              </TBODY>
+            </TABLE>
+          <TABLE width=740 border=0 cellPadding=2 cellSpacing=0>
+        <TBODY>
+        <TBODY>
+        <TR>
+          <TD width=10 vAlign=top>&nbsp;</TD>
+          <TD width=318 vAlign=top><DIV style="border: 1px grey solid; padding:7px; width:435px;"><table width="250" border="0" cellspacing="0" cellpadding="1">
+            <tr>
+              <td width="90px"><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#003399 size=2>Login Name</FONT></B></td>
+              <td><FONT face="Verdana, Arial, Helvetica, sans-serif" size=3><INPUT size=10 name=loginID></FONT></td>
+            </tr>
+            <tr>
+              <td><B><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#003399 size=2>Password</FONT></B></td>
+              <td><FONT face="Verdana, Arial, Helvetica, sans-serif" size=3><INPUT type=password size=10 name=passwd></FONT></td>
+            </tr>
+            <tr>
+              <td colspan="2" height="60"><img id="imgCaptcha" vspace="3" border="1" src="../images/ajax-loader.gif" width="175" height="50"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#003399 size=2>Type the letter shown above </FONT></td>
+              </tr>
+            <tr>
+              <td colspan="2"><input name="verify_text" size="25" maxlength="10"></td>
+              </tr>
+            <tr>
+              <td colspan="2" style="padding-top:5px"><DIV class="myCaptcha"></DIV></td>
+              </tr>
+
+
+            <tr>
+              <td colspan="2"><FONT face="Verdana, Arial, Helvetica, sans-serif" color=#003399 size=2>Please click the matching image on the left. </FONT></td>
+            </tr>
+
+              
+            <tr>
+              <td colspan="2" style="padding-top:5px"><INPUT type=submit value=Login name=Button style="align: middle;"></td>
+              </tr>
+          </table></DIV></TD>
+		  <TD width="400" vAlign=top><DIV></DIV>
+            <DIV style="width:400;">
+	            <DIV align=left>
+	            <STRONG><FONT face="Verdana, Arial, Helvetica, sans-serif" size=2><A href="../bin2/user_registration_form"><FONT color=#003399>Click Here...</FONT></A>
+				<em><FONT face="Times New Roman, Times, serif" color=#ff0000>to 
+	            submit first-time registration by "Sports Facilities User Card" holders and long-service retirees / leavers of the University.<br/><br/>
+				</FONT></em>
+				
+				<span style="background-Color:#ffffff"><em>
+				<FONT face="Times New Roman, Times, serif" color=#000000>Forget your password?<BR>
+	            Click <A  href="../bin2/user_reset_pwd"><FONT color=#3333ff>here</FONT></A> to submit a request for reset of Password.</FONT></em>
+	            </span>
+				</FONT></STRONG>
+				</DIV>
+            </DIV>
+          </TD>
+        </TR>
+		<TR>
+			<TD height="12"></TD>
+		    <TD height="12"></TD>
+		    <TD height="12"></TD>
+		</TR>
+        <TR>
+          <TD vAlign=top bgColor=#f2f2f2></TD>
+          <TD vAlign=top bgColor=#f2f2f2>
+            <P><I><FONT face="Times New Roman, Times, serif" color=#3333ff 
+            size=2>For enquiries and assistance, please contact the 
+            </FONT></I><BR><I><FONT face="Times New Roman, Times, serif" 
+            color=#3333ff size=2><A href="https://sao.ust.hk/"><FONT 
+            color=#3333ff>Student Affairs Office</FONT></A>: <A 
+            href="mailto:safbs@ust.hk"><FONT 
+            color=#3333ff>safbs@ust.hk</FONT></A> or tel.: 2358 
+            6666)</FONT></I></P>
+            <P><I><FONT face="Times New Roman, Times, serif" size=2>For more 
+            information about this system,&nbsp;<FONT color=#3333ff> <A 
+            href="https://sao.ust.hk/facilities/fbs.html">click here ...</A> 
+            </FONT></FONT></I></P></TD>
+          <TD vAlign=top bgColor=#f2f2f2><FONT 
+            face="Times New Roman" size=2><FONT 
+            face="Times New Roman, Times, serif"><I><FONT 
+            color=#ff0000>Attention:</FONT> <FONT color=#3333ff>Please note that 
+            transactions over the Internet may be subject to interruption, 
+            transmission blackout, delayed transmission due to Internet traffic, 
+            or incorrect data transmission due to the public nature of the 
+            Internet. The HKUST cannot assume responsibility for malfunctions in 
+            communication facilities not under our control that may affect the 
+            accuracy or timeliness of instruction you 
+            send</FONT></I></FONT></FONT></TD>
+        </TR></TBODY></TABLE>
+      <BR>
+      <DIV><FONT face=MingLiu size=2></FONT>&nbsp;</DIV>
+      <DIV><FONT face=MingLiu size=2></FONT><FONT face=MingLiu 
+      size=2></FONT></DIV><BR><INPUT type=hidden value=false name=JSEnable> 
+      </FORM></TD></TR></TBODY></TABLE>
+</BODY>
+
+<script>
+$( document ).ready(function(){
+	$('.myCaptcha').sexyCaptcha('../CaptchaServlet');
+});
+
+</script>
+
+</HTML>
+
+
+      
+      
