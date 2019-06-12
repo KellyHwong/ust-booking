@@ -3,6 +3,7 @@
 # Author: Kelly Hwong
 # Date: April 8th, 2019
 
+import os
 import json
 import requests
 import random
@@ -23,9 +24,13 @@ class FBS(object):
 
     def __init__(self, ):
         super(FBS, self).__init__()
-        with open(config_file, "r") as f:
+        UST_BOOKING_ROOT = os.path.abspath(os.path.join(__file__, "../.."))
+        # UST_BOOKING_ROOT = os.path.relpath("..", start=__file__)
+        config_path = os.path.join(UST_BOOKING_ROOT, config_file)
+        with open(config_path, "r") as f:
             user = json.load(f)
         self.user = user  # 没有就回直接报错，那么就要去 user.json 里填写user信息了
+        print("Login user: %s" % self.user["username"])  # TODO 换成 logger
         self.url = "https://w6.ab.ust.hk/fbs_user/CaptchaServlet"
         self.session = requests.Session()
         self.draggable_id = None
@@ -68,7 +73,7 @@ class FBS(object):
     def get_verify_text(self) -> bool:
         response = self.session.get(
             "https://w6.ab.ust.hk/fbs_user/Captcha.jpg?" + str(random.random()), headers=HEADERS)
-        with open("./image/Captcha.jpg", "wb") as f:
+        with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), "image/Captcha.jpg"), "wb") as f:
             length = response.headers.get('content-length')
             if length is None:
                 f.write(response.content)
@@ -77,7 +82,8 @@ class FBS(object):
                     f.write(chunk)
 
         rc = RClient('kellyhwong', 'Hbxn8310189')
-        im = open('./image/Captcha.jpg', 'rb').read()
+        im = open(os.path.join(os.path.dirname(os.path.realpath(
+            __file__)), "image/Captcha.jpg"), 'rb').read()
         result = rc.rk_create(im, 3050)
         # print(type(result))
         if "Result" in result.keys():
@@ -113,6 +119,7 @@ def main():
     fbs = FBS()
     if fbs.get_draggable_id():
         print(fbs.draggable_id)
+        return
     if fbs.get_verify_text():
         print(fbs.verify_text)
     fbs.login()
